@@ -1,0 +1,21 @@
+<h1>Ставка на матч: ${match.getTitle()}</h1>
+
+#{form @Application.checkRates(match)}
+    <div class="form-content">
+        <div>
+            <h3>Задайте счет команд:</h3>
+            <input type="text" size="3" value="0" name="nakedRedTeam" />
+            -
+            <input type="text" size="3" value="0" name="nakedBlueTeam" />
+        </div>
+        <div>
+            <h3>Выберите победителя:</h3>
+            <input type="radio" name="vinTeam" value="0">Ничья<Br>
+            <input type="radio" name="vinTeam" value="1">${match.redTeam.name}<Br>
+            <input type="radio" name="vinTeam" value="2">${match.blueTeam.name}<Br>
+        </div>
+    </div>
+    <input type="submit" value="Проверить ставку" />
+#{/form}
+
+<a href="@{Application.index()}">Вернуться к списку матчей.</a>

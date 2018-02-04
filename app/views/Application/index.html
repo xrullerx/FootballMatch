@@ -1,0 +1,22 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<h1>Matchmaker</h1>
+<h2>Список матчей:</h2>
+
+#{list items:listMatch, as:'match'}
+    <div class="match">
+        <h3 class="match-title">
+            <a href="@{Application.makeBet(match)}">Матч "${match.getTitle()}"</a>
+        </h3>
+        <a href="@{Application.makeBet(match)}">Сделать ставку по матчу</a>
+    </div>
+#{/list}
+
+<div>
+    <br>
+    <br>
+    <br>
+    <a href="/admin">Создать матч</a>
+</div>
+
